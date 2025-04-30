@@ -9,7 +9,7 @@
 		ref="customTableBox"
 		@scroll="customTableScrollFn"
 	>
-		<table class="df-table" ref="customTable">
+		<table class="my-table" ref="customTable">
 			<thead>
 			<tr class="table-fixed-tr tableFixedTr">
 				<th v-if="checkbox.show"
@@ -38,10 +38,9 @@
 			>
 				<td v-if="checkbox.show"
 				    :class="[
-						'w30 pointer',
-						checkbox.class || '',
-						checkbox.fixed ? 'table-fixed-box fixed-left' : ''
-					]"
+					    checkbox.class || '',
+					    checkbox.fixed ? 'table-fixed-box fixed-left' : ''
+					    ]"
 				    @click="bodyCheckFn(row)"
 				>
 					<el-checkbox v-model="row.rowChecked"
@@ -454,5 +453,11 @@ defineExpose({
 .no-data-box {
 	position: sticky;
 	left: 0;
+	padding: 12px !important;
+	color: #a0a3a6 !important;
+	text-align: center !important;
+}
+.m-t6 {
+	margin-top: 6px;
 }
 </style>
